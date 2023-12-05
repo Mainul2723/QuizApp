@@ -32,6 +32,13 @@ class _QuizState extends State<Quiz> {
     }
   }
 
+  void restartQuiz() {
+    setState(() {
+      selectedAnswer.clear(); // Clear the selected answers
+      actvScrn = 'start_screen'; // Reset the screen to the start screen
+    });
+  }
+
   @override
   Widget build(context) {
     Widget setScreen = StartScreen(switchScreen);
@@ -43,6 +50,7 @@ class _QuizState extends State<Quiz> {
     if (actvScrn == 'result_screen') {
       setScreen = ResultScreen(
         choosenAnswer: selectedAnswer,
+        restartQuiz: restartQuiz,
       );
     }
     return MaterialApp(

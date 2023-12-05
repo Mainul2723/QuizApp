@@ -34,6 +34,18 @@ class _QuestionScreen extends State<QuestionScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
+              'Question no. ${currentQusIndex + 1}',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.lato(
+                fontSize: 22,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
               qus.qus,
               textAlign: TextAlign.center,
               style: GoogleFonts.lato(
